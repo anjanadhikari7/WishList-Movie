@@ -1,29 +1,20 @@
 // src/App.js
 import React from "react";
-import "./App.css";
-import Header from "./Components/Header";
-import Banner from "./Components/Banner";
-import Row from "./Components/Row";
+import { Container } from "react-bootstrap";
+import AppNavbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
+import MovieList from "./Components/MovieList";
 
-const App = () => {
+function App() {
   return (
-    <div className="app">
-      <Header />
-      <Banner />
-      <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl="/api/fetchNetflixOriginals"
-        isLargeRow
-      />
-      <Row title="Trending Now" fetchUrl="/api/fetchTrending" />
-      <Row title="Top Rated" fetchUrl="/api/fetchTopRated" />
-      <Row title="Action Movies" fetchUrl="/api/fetchActionMovies" />
-      <Row title="Comedy Movies" fetchUrl="/api/fetchComedyMovies" />
-      <Row title="Horror Movies" fetchUrl="/api/fetchHorrorMovies" />
-      <Row title="Romance Movies" fetchUrl="/api/fetchRomanceMovies" />
-      <Row title="Documentaries" fetchUrl="/api/fetchDocumentaries" />
+    <div className="App">
+      <AppNavbar />
+      <Hero />
+      <Container>
+        <MovieList />
+      </Container>
     </div>
   );
-};
+}
 
 export default App;
